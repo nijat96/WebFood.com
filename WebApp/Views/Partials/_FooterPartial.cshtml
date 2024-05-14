@@ -1,0 +1,14 @@
+﻿<section class="footer">
+    @await Component.InvokeAsync("SocialMediaList")
+    <div class="links">
+        <a asp-controller="Home" asp-action="Index" class="active">Menyular</a>
+        <a asp-controller="Special" asp-action="Index">Özəl</a>
+        <a asp-controller="About" asp-action="Index">Haqqımızda</a>
+        <a asp-controller="Contact" asp-action="Add">Bizimlə Əlaqə</a>
+        <a asp-controller="Review" asp-action="Index">Rəylər</a>
+        <a asp-controller="Admin" asp-action="Index">Admin</a>
+    </div>
+    <div class="credit">
+        created by <span>Ariz Jafarli</span> | all right reserved
+    </div>
+</section>

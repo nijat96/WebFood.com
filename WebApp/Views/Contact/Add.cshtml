@@ -1,0 +1,30 @@
+﻿@model DTO.EntityDTO.MessageDTO
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<!-- Contact Section Start -->
+<section class="contact" id="contact">
+    <h1 class="heading">Contact <span>us</span></h1>
+    <div class="row">
+        @await Component.InvokeAsync("MapList")
+        <form method="post">
+            <h3>bizə mesaj yazın</h3>
+            <div class="inputBox">
+                <i class="fas fa-user"></i>
+                <input type="text" asp-for="Name" placeholder="Adınız" />
+            </div>
+            <div class="inputBox">
+                <i class="fas fa-envelope"></i>
+                <input type="email" asp-for="Email" placeholder="Emailiniz" />
+            </div>
+            <div class="inputBox">
+                <i class="fas fa-phone"></i>
+                <input type="number" asp-for="Phone" placeholder="Telefon nömrəniz" />
+            </div>
+            <input type="submit" class="btn" value="Göndər" />
+        </form>
+    </div>
+</section>
+<!-- Contact Section End -->

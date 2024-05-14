@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DTO.EntityDTO.MessageDTO>
+@{
+    ViewData["Title"] = "Message";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="xs">
+    <h3>Cədvəllər</h3>
+    <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+        <div class="panel-heading">
+            <h2>Mesajlar Cədvəli</h2>
+            <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+        </div>
+        <div class="panel-body no-padding" style="display: block;">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="warning">
+                        <th>#</th>
+                        <th>Ad</th>
+                        <th>Email</th>
+                        <th>Telefon</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ID</td>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                            <td>@item.Phone</td>
+                            <td>
+                                <a asp-controller="Admin" asp-action="MessageDelete" asp-route-id="@item.ID" class="btn btn-danger">Sil</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
